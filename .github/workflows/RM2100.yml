@@ -1,7 +1,7 @@
 name: Build-rm2100
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   
 env:
   src_git: https://github.com/w3cat/Padavan-KVR-vb1980.git
