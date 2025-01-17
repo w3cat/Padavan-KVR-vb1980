@@ -61,7 +61,7 @@ jobs:
         fakeroot ./build_firmware_modify ${{ matrix.device }} 0
         echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         mkdir -p $firmware_dir   
-        mv images/*.trx $firmware_dir
+        cp $work_dir/images/*.trx $firmware_dir
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@v4
