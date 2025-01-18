@@ -4,7 +4,7 @@ SRC_URL=https://ipset.netfilter.org/$(SRC_NAME).tar.bz2
 THISDIR = $(shell pwd)
 
 #all: download_test extract_test config_test
-all: config_test
+all: extract_test config_test
 	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME)
 	$(MAKE) modules -j$(HOST_NCPU) -C $(SRC_NAME)
 
