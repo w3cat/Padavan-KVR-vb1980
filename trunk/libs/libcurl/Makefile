@@ -5,7 +5,7 @@ SRC_URL=https://github.com/curl/curl/releases/download/curl-8_5_0/$(SRC_NAME).ta
 LDFLAGS += -Wl,-rpath-link=$(STAGEDIR)/lib
 
 #all: download_test extract_test config_test
-all: config_test
+all: extract_test config_test
 	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME)
 
 download_test:
@@ -15,7 +15,7 @@ download_test:
 
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
-		tar xf $(SRC_NAME).tar.xz; \
+		tar xJf $(SRC_NAME).tar.xz; \
 		patch -d $(SRC_NAME) -p1 -i ../no_docs_test.patch; \
 	fi )
 
