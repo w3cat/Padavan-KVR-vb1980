@@ -40,7 +40,7 @@ download_test:
 	fi )
 
 extract_test:
-	( if [ ! -d $(SRC_NAME) ]; then \
+	( if [ ! -d $(SRC_NAME).tar.gz ]; then \
 		tar -xf $(SRC_NAME).tar.gz; \
 		patch -d $(SRC_NAME) -p1 < $(SRC_NAME).patch; \
 	fi )
